@@ -1,6 +1,6 @@
 # snoostorm-es6
 
-event-based wrapper around [`snoowrap`](https://npm.im/snoowrap)
+event-based wrapper around [`snoowrap`](https://not-an-aardvark.github.io/snoowrap)
 fork of [`SnooStorm`](https://github.com/MayorMonty/Snoostorm)
 
 ## usage
