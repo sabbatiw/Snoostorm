@@ -1,34 +1,56 @@
-# SnooStorm
+# snoostorm-es6
 
-Event-based wrapper around [`snoowrap`](https://npm.im/snoowrap)
+event-based wrapper around [`snoowrap`](https://npm.im/snoowrap)
+fork of [`SnooStorm`](https://github.com/MayorMonty/Snoostorm)
 
-JUST RELEASED: VERSION 1.0!
+## usage
 
-- TypeScript Rewrite
-- More sensible API
-- Better support for InboxStream
-
-## Usage
-
-Basic Usage:
+basic usage:
 
 ```javascript
-import { InboxStream, CommentStream, SubmissionStream } from "./src/main";
-import Snoowrap from "snoowrap";
+'use strict';
 
-const creds = require("./credentials.json");
+const snoowrap = require('snoowrap');
+const snoostorm = require('snoostorm-es6');
 
-const client = new Snoowrap(creds);
+const options = {
+    userAgent: "<user agent>",
+    clientSecret: "<client secret>",
+    clientId: "<client id>",
+    username: "<username>",
+    password: "<password>"
+};
 
-const comments = new CommentStream(client);
-comments.on("item", console.log);
+const r = new snoowrap(options);
+const s = new snoostream(r);
 
-const submissions = new SubmissionStream(client);
-submissions.on("item", console.log);
+// comment streaming
+const comments = s.Stream("comment", {
+  subreddit: "all",
+  pollTime: 5000
+});
 
-const inbox = new InboxStream(client);
-inbox.on("item", console.log);
+comments.on("item", item => {
+  console.log(item);
+});
 
-inbox.end();
-inbox.on("end", () => console.log("And now my watch has ended"));
+// submission streaming
+const submissions = s.Stream("submission", {
+  subreddit: "asoiaf",
+  pollTime: 10000
+});
+
+submissions.on("item", item => {
+  console.log(item.title);
+});
+
+// inbox streaming
+// filter one of "inbox" (default), "unread", "messages", "comments", "selfreply", or "mentions"
+const mentions = s.Stream("inbox", {
+  filter: "mentions"
+});
+
+mentions.on("item", item => {
+  console.log(item.author.name);
+});
 ```
