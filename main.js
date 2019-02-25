@@ -11,7 +11,7 @@ const SnooStorm = (() => {
   const parseOptions = options => {
     options = options || {};
     options.filter = options.filter || "inbox";
-    options.polltime = options.pollTime || 2000;
+    options.pollTime = options.pollTime || 2000;
     options.results = options.results || 5;
     options.subreddit = options.subreddit;
     return options
