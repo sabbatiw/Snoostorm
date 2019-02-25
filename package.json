@@ -1,63 +1,30 @@
 {
-  "name": "snoostorm",
-  "version": "1.0.1",
-  "description": "A streaming client for reddit, based off of snoowrap",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MayorMonty/Snoostorm.git"
-  },
+  "name": "snoostorm-es6",
+  "version": "1.0.0",
+  "description": "es6 fork of snoostorm",
   "keywords": [
     "reddit",
-    "api",
-    "oauth",
-    "script",
-    "web",
-    "client",
-    "wrapper",
+    "snoostorm",
     "snoowrap"
   ],
-  "author": {
-    "name": "Brendan McGuire",
-    "url": "artificalchamber@gmail.com"
-  },
-  "license": "MIT",
+  "homepage": "https://github.com/sabbatiw/Snoostorm#readme",
   "bugs": {
-    "url": "https://github.com/MayorMonty/Snoostorm/issues"
+    "url": "https://github.com/sabbatiw/Snoostorm/issues"
+  },
+  "license": { 
+    "license": "MIT" 
+  },
+  "author": {
+    "name": "sabbatiw",
+    "email": "sabbatiw@oregonstate.edu",
+    "url": "https://github.com/sabbatiw"
+  },
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sabbatiw/Snoostorm.git"
   },
   "dependencies": {
-    "@types/node": "^11.9.5",
-    "@types/snoowrap": "^1.15.3",
     "snoowrap": "^1.11.3"
-  },
-  "homepage": "https://github.com/MayorMonty/Snoostorm#readme",
-  "gitHead": "41678a09ffd1feab0953ef6be7bcafca29791959",
-  "_id": "snoostorm@0.0.3",
-  "_shasum": "bc7cb3e386b2dac813e2d82df39feed3daac79a2",
-  "_from": "snoostorm@>=0.0.3 <0.0.4",
-  "_npmVersion": "2.15.1",
-  "_nodeVersion": "6.2.2",
-  "_npmUser": {
-    "name": "mayormonty",
-    "email": "artificalchamber@gmail.com"
-  },
-  "dist": {
-    "shasum": "bc7cb3e386b2dac813e2d82df39feed3daac79a2",
-    "tarball": "https://registry.npmjs.org/snoostorm/-/snoostorm-0.0.3.tgz"
-  },
-  "maintainers": [
-    {
-      "name": "mayormonty",
-      "email": "artificalchamber@gmail.com"
-    }
-  ],
-  "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/snoostorm-0.0.3.tgz_1482210935592_0.6064679615665227"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/snoostorm/-/snoostorm-0.0.3.tgz"
+  }
 }
