@@ -1,6 +1,6 @@
 # snoostorm-es6
 
-event-based wrapper around [`snoowrap`](https://not-an-aardvark.github.io/snoowrap)
+event-based wrapper around [`snoowrap`](https://not-an-aardvark.github.io/snoowrap)  
 fork of [`SnooStorm`](https://github.com/MayorMonty/Snoostorm)
 
 ## usage
@@ -52,5 +52,11 @@ const mentions = s.Stream("inbox", {
 
 mentions.on("item", item => {
   console.log(item.author.name);
+});
+
+// error handling
+comments.on("error", e => {
+  // stop breaking the rate-limit
+  console.log(e);
 });
 ```
