@@ -51,8 +51,8 @@ submissions.on("item", item => {
 
 #### inbox streaming
 ```javascript
+// filter one of "inbox" (default), "unread", "messages", "comments", "selfreply", or "mentions"
 const mentions = s.Stream("inbox", {
-// choose "inbox" (default), "unread", "messages", "comments", "selfreply", or "mentions"
   filter: "mentions"
 });
 
