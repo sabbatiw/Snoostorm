@@ -75,6 +75,6 @@ comments.on("end", () => {
 });
 
 setTimeout(() => {
-  stream.emit("end");
+  comments.emit("end");
 }, 3600000);
 ```
