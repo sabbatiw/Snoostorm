@@ -56,7 +56,6 @@ mentions.on("item", item => {
 
 // error handling
 comments.on("error", e => {
-  // stop breaking the rate-limit
-  console.log(e);
+  console.log(e); // stop breaking the rate-limit
 });
 ```
