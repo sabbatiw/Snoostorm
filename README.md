@@ -5,7 +5,7 @@ fork of [`SnooStorm`](https://github.com/MayorMonty/Snoostorm)
 
 ## usage
 
-basic usage:
+#### setup:
 
 ```javascript
 'use strict';
@@ -22,9 +22,11 @@ const options = {
 };
 
 const r = new snoowrap(options);
-const s = new snoostream(r);
+const s = new snoostorm(r);
+```
 
-// comment streaming
+### comment streaming
+```javascript
 const comments = s.Stream("comment", {
   subreddit: "all",
   pollTime: 5000
@@ -33,8 +35,10 @@ const comments = s.Stream("comment", {
 comments.on("item", item => {
   console.log(item);
 });
+```
 
-// submission streaming
+#### submission streaming
+```javascript
 const submissions = s.Stream("submission", {
   subreddit: "asoiaf",
   pollTime: 10000
@@ -43,18 +47,21 @@ const submissions = s.Stream("submission", {
 submissions.on("item", item => {
   console.log(item.title);
 });
+```
 
-// inbox streaming
-// filter one of "inbox" (default), "unread", "messages", "comments", "selfreply", or "mentions"
+#### inbox streaming
+```javascript
 const mentions = s.Stream("inbox", {
-  filter: "mentions"
+  filter: "mentions"  // choose "inbox" (default), "unread", "messages", "comments", "selfreply", or "mentions"
 });
 
 mentions.on("item", item => {
   console.log(item.author.name);
 });
+```
 
-// error handling
+#### error handling
+```javascript
 comments.on("error", e => {
   console.log(e); // stop breaking the rate-limit
 });
