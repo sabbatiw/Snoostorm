@@ -25,7 +25,7 @@ const r = new snoowrap(options);
 const s = new snoostorm(r);
 ```
 
-### comment streaming
+#### comment streaming
 ```javascript
 const comments = s.Stream("comment", {
   subreddit: "all",
@@ -52,7 +52,8 @@ submissions.on("item", item => {
 #### inbox streaming
 ```javascript
 const mentions = s.Stream("inbox", {
-  filter: "mentions"  // choose "inbox" (default), "unread", "messages", "comments", "selfreply", or "mentions"
+// choose "inbox" (default), "unread", "messages", "comments", "selfreply", or "mentions"
+  filter: "mentions"
 });
 
 mentions.on("item", item => {
@@ -65,4 +66,15 @@ mentions.on("item", item => {
 comments.on("error", e => {
   console.log(e); // stop breaking the rate-limit
 });
+```
+
+#### ending a stream
+```javascript
+comments.on("end", () => {
+  console.log("your one hour comment stream has ended.");
+});
+
+setTimeout(() => {
+  stream.emit("end");
+}, 3600000);
 ```
