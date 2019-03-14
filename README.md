@@ -29,6 +29,7 @@ const s = new snoostorm(r);
 ```javascript
 const comments = s.Stream("comment", {
   subreddit: "all",
+  results: 100, // defaults to 25, max is 100
   pollTime: 5000
 });
 
