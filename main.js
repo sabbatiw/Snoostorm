@@ -12,7 +12,7 @@ const SnooStorm = (() => {
     options = options || {};
     options.filter = options.filter || "inbox";
     options.pollTime = options.pollTime || 2000;
-    options.results = options.results || 5;
+    options.results = options.results || 25;
     options.subreddit = options.subreddit;
     return options
   }
